@@ -1,38 +1,31 @@
 import React, { useState } from 'react';
-import Sidebar from './components/Sidebar';
-import './App.css';
 import Chat from './components/Chat';
+import './App.css';
 
+
+// Demo 버전이니까 제발 단순하게...
+
+// Todo : 
+// 0. 엔터 키로도 입력 가능하게, 추가로 입력하면 입력창 비워지게
+// 1. 유저 채팅, gpt 채팅 구분 (좌우 or 이미지 사용)
+// 2. gpt 채팅에 하이라이트 어떻게 넣을지 고민 필요
+// 3. pdf 반환하는 경우 다운 가능하게
+// 4. 페이지 두개로 나눠서 seah-bs 기능 보여주기
 const App = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
   return (
     <div className="app-container">
-      <header className={`header ${isSidebarOpen ? 'header-shrink' : ''}`}>
+      <header className="logo flex justify-between">
         <div className='flex gap-2'>
-          { !isSidebarOpen && (
-            <div>
-              <button className="open-btn" onClick={toggleSidebar}>≡</button>
-              <button className="open-btn" onClick={toggleSidebar}>≡</button>
-            </div>
-          )}
-          <span>RAG DEMO</span>
+          <span>로고자리</span>
+          <span>대충이쁜타이틀</span>
         </div>
-        <div className="logo">
-          <h1>My Website</h1>
+        <div className="userInfo">
+          <h1>대충깔끔한유저인포</h1>
         </div>
-        
       </header>
 
-      <div className="content-container">
-        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <main className={`main-content ${isSidebarOpen ? 'content-shrink' : ''}`}>
-          <Chat />
-        </main>
+      <div>
+        <Chat />
       </div>
     </div>
   );

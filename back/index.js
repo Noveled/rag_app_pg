@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-
 // refer : https://bb-library.tistory.com/214
 app.post('/rag_refer', (req, res) => {
   try {
